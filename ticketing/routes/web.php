@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Ticket\WEB\TicketController;
+
 
 Route::get('/', function () {
     return view('pages.login');
@@ -13,4 +15,7 @@ Route::get('signup', function () {
 Route::get('home', function () {
     return view('pages.home');
 })->name('home');
+
+
+Route::post('ticket/add', [\App\Http\Controllers\Ticket\WEB\TicketController::class, 'createTickets']);
 
